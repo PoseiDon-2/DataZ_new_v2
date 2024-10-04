@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const indexRouter = require('./routes/index'); // Import your routes
 
+app.set('view engine', 'ejs');
+
+
 app.use('/', indexRouter); // Use the routes
 
 const port = process.env.PORT || 3000; // Define your port
