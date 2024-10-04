@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-// เส้นทางสำหรับหน้าแรก
+// Define your routes
 router.get('/', (req, res) => {
-  res.render('index', { title: 'Home Page' });
+    res.send('Hello World!');
 });
 
+// Export the router to be used in app.js
 module.exports = router;
