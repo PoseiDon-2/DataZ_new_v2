@@ -1,49 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ออกกำลังกายสนุกจังเลย</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"crossorigin="anonymous"/>
 
-    <link rel="stylesheet" href="../Styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../Styles/style.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        overflow-y: auto;
+      }
+      body {
+        background-color: rgb(240, 239, 239);
+      }
+      h1 {
+        font-family: "Impact", sans-serif; /* ฟอนต์ที่ดูแข็งแรง */
+        font-size: 4em; /* ขนาดตัวอักษรใหญ่ */
+        color: #f2f2f2; /* สีเขียวสดใส */
+        text-align: center; /* จัดให้อยู่ตรงกลาง */
+        margin-top: 30px;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* เงาเข้มใต้ตัวอักษร */
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #ee0909,
+          #000000
+        ); /* พื้นหลังไล่สีสดใส */
+        border-radius: 15px; /* ขอบมน */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงารอบหัวข้อ */
+        position: relative; /* ทำให้ไอคอนสามารถจัดตำแหน่งได้ */
+      }
+
+      .overlay {
+        position: absolute;
+      }
+
+      /* ตกแต่ง navbar */
+      .navbar {
+        background: linear-gradient(
+          135deg,
+          #ee0909,
+          #000000
+        ); /* พื้นหลังไล่สี */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เงาให้ navbar ดูโดดเด่น */
+        border-radius: 8px; /* ขอบมน */
+      }
+
+      .navbar-brand {
+        color: #f2f2f2; /* สีตัวอักษร */
+        font-size: 1.5em; /* ขนาดตัวอักษรใหญ่ */
+        font-weight: bold;
+      }
+
+      .navbar-nav .nav-link {
+        color: #f2f2f2; /* สีของลิงก์ใน navbar */
+        font-weight: 500;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ffffff; /* เปลี่ยนสีลิงก์เมื่อ hover */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+      }
+
+      .navbar-toggler {
+        border: none; /* ลบกรอบปุ่ม toggle */
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* สีของไอคอนเมนูเป็นสีขาว */
+      }
+
+      .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.9); /* พื้นหลัง dropdown สีดำ */
+        border-radius: 8px;
+      }
+
+      .dropdown-item {
+        color: #f2f2f2; /* สีของ dropdown item */
+      }
+
+      .dropdown-item:hover {
+        background-color: #ee0909; /* เปลี่ยนสีเมื่อ hover */
+        color: #ffffff;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        z-index: 2;
+      }
+
+      .box {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
     <h1>ออกกำลังกายสนุกจังเลย</h1>
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">ICON</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  เลือกระดับความยาก
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">ระดับง่าย</a></li>
-                  <li><a class="dropdown-item" href="#">ระดับปลานกลาง</a></li>
-                  <li><a class="dropdown-item" href="#">ระดับยาก</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">ICON</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                เลือกระดับความยาก
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">ระดับง่าย</a></li>
+                <li><a class="dropdown-item" href="#">ระดับปลานกลาง</a></li>
+                <li><a class="dropdown-item" href="#">ระดับยาก</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <div class="container">
-        <div class="box">
-            <p>content</p>
-        </div>
+      <div class="box">
+        <p>content</p>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

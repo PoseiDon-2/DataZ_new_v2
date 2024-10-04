@@ -1,245 +1,96 @@
-/* นำเข้าฟอนต์ */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        overflow-y: auto;
+      }
+      body {
+        background-color: rgb(240, 239, 239);
+      }
+      h1 {
+        font-family: "Impact", sans-serif; /* ฟอนต์ที่ดูแข็งแรง */
+        font-size: 4em; /* ขนาดตัวอักษรใหญ่ */
+        color: #f2f2f2; /* สีเขียวสดใส */
+        text-align: center; /* จัดให้อยู่ตรงกลาง */
+        margin-top: 30px;
+        text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* เงาเข้มใต้ตัวอักษร */
+        padding: 20px;
+        background: linear-gradient(
+          135deg,
+          #ee0909,
+          #000000
+        ); /* พื้นหลังไล่สีสดใส */
+        border-radius: 15px; /* ขอบมน */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* เพิ่มเงารอบหัวข้อ */
+        position: relative; /* ทำให้ไอคอนสามารถจัดตำแหน่งได้ */
+      }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    overflow-y: auto;
-}
+      .overlay {
+        position: absolute;
+      }
 
-body {
-    background-image: url('boxing.jpg');
-    background-size: cover;
-    background-position: center;
-    font-family: 'Poppins', sans-serif;
-    color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    position: relative;
-}
+      /* ตกแต่ง navbar */
+      .navbar {
+        background: linear-gradient(
+          135deg,
+          #ee0909,
+          #000000
+        ); /* พื้นหลังไล่สี */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* เงาให้ navbar ดูโดดเด่น */
+        border-radius: 8px; /* ขอบมน */
+      }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
+      .navbar-brand {
+        color: #f2f2f2; /* สีตัวอักษร */
+        font-size: 1.5em; /* ขนาดตัวอักษรใหญ่ */
+        font-weight: bold;
+      }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    z-index: 2;
-}
+      .navbar-nav .nav-link {
+        color: #f2f2f2; /* สีของลิงก์ใน navbar */
+        font-weight: 500;
+      }
 
-.box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    margin-top: 100px;
-}
+      .navbar-nav .nav-link:hover {
+        color: #ffffff; /* เปลี่ยนสีลิงก์เมื่อ hover */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงา */
+      }
 
-h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #000000;
-    font-weight: 600;
-    margin-top: 20px;
-}
+      .navbar-toggler {
+        border: none; /* ลบกรอบปุ่ม toggle */
+      }
 
-h2.round {
-    text-align: left;
-    margin: 20px;
-    font-size: 23px;
-    font-weight: bolder;
-}
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* สีของไอคอนเมนูเป็นสีขาว */
+      }
 
-h3.red {
-    text-align: center;
-    color: #f44336;
-}
+      .dropdown-menu {
+        background-color: rgba(0, 0, 0, 0.9); /* พื้นหลัง dropdown สีดำ */
+        border-radius: 8px;
+      }
 
-h3.blue {
-    text-align: center;
-    color: #42a5f5;
-}
+      .dropdown-item {
+        color: #f2f2f2; /* สีของ dropdown item */
+      }
 
-table {
-    width: 100%;
-    margin: 20px 0;
-    border-collapse: collapse;
-    background-color: rgba(46, 46, 46, 0.8);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
+      .dropdown-item:hover {
+        background-color: #ee0909; /* เปลี่ยนสีเมื่อ hover */
+        color: #ffffff;
+      }
 
-th, td {
-    padding: 16px;
-    border: 1px solid #444;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 400;
-    color: #f4f4f4;
-}
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 40px auto;
+        z-index: 2;
+      }
 
-th {
-    background-color: #d32f2f;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-tr:nth-child(even) {
-    background-color: rgba(58, 58, 58, 0.7);
-}
-
-tr:nth-child(odd) {
-    background-color: rgba(46, 46, 46, 0.7);
-}
-
-tr:hover {
-    background-color: #444;
-}
-
-button {
-    padding: 10px 18px;
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
-    transition: 0.3s ease;
-    font-family: 'Poppins', sans-serif;
-}
-
-button:hover {
-    background-color: #c62828;
-    transform: scale(1.05);
-}
-
-.red-corner {
-    color: #ef5350;
-    font-weight: 600;
-}
-
-.blue-corner {
-    color: #42a5f5;
-    font-weight: 600;
-}
-
-.end-row {
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-.final-button {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    background-color: #d32f2f;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    text-align: center;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.final-button:hover {
-    background-color: #c62828;
-    transform: scale(1.05);
-}
-
-/* สไตล์สำหรับปุ่มบวกที่ขยับตาม */
-.floating-button {
-    position: fixed; /* ตำแหน่งคงที่ */
-    bottom: 20px; /* ระยะห่างจากขอบล่าง */
-    right: 20px; /* ระยะห่างจากขอบขวา */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #d32f2f;
-    color: white;
-    font-size: 36px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    z-index: 9999; /* ให้อยู่บนสุด */
-    transition: 0.3s ease;
-}
-
-.floating-button:hover {
-    background-color: #c62828;
-    transform: scale(1.1);
-}
-
-/* สไตล์สำหรับฟอร์มที่ซ่อนอยู่ */
-.form-overlay {
-    display: none; /* ซ่อนฟอร์ม */
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.form-box {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    width: 400px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.form-box h3 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.form-box input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-box button {
-    padding: 10px 20px;
-    background-color: #d32f2f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 4px;
-    margin-top: 20px;
-}
-
-.form-box button:hover {
-    background-color: #c62828;
-}
+      .box {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+        margin-top: 40px;
+      }
